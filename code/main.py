@@ -47,5 +47,7 @@ try:
         print(f'EPOCH[{epoch+1}/{world.TRAIN_epochs}] {output_information}')
         torch.save(Recmodel.state_dict(), weight_file)
 finally:
+    cprint("[FINAL TEST]")
+    Procedure.Test(dataset, Recmodel, epoch, w, world.config['multicore'])
     if world.tensorboard:
         w.close()
