@@ -112,6 +112,8 @@ def Test(dataset, Recmodel, epoch, w=None, multicore=0):
                 exclude_items.extend(items)
             rating[exclude_index, exclude_items] = -(1<<10)
             _, rating_K = torch.topk(rating, k=max_K)
+            print("rating values: ", _)
+            print("rating indices: ", rating_K)
             rating = rating.cpu().numpy()
             # aucs = [ 
             #         utils.AUC(rating[i],
