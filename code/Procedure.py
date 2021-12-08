@@ -83,8 +83,7 @@ def Test(dataset, Recmodel, epoch, w=None, multicore=0):
     if multicore == 1:
         pool = multiprocessing.Pool(CORES)
     results = {'precision': np.zeros(len(world.topks)),
-               'recall': np.zeros(len(world.topks)),
-               'ndcg': np.zeros(len(world.topks))}
+               'recall': np.zeros(len(world.topks))}
     with torch.no_grad():
         users = list(testDict.keys())
         try:
@@ -137,18 +136,14 @@ def Test(dataset, Recmodel, epoch, w=None, multicore=0):
         for result in pre_results:
             results['recall'] += result['recall']
             results['precision'] += result['precision']
-            results['ndcg'] += result['ndcg']
         results['recall'] /= float(len(users))
         results['precision'] /= float(len(users))
-        results['ndcg'] /= float(len(users))
         # results['auc'] = np.mean(auc_record)
         if world.tensorboard:
             w.add_scalars(f'Test/Recall@{world.topks}',
                           {str(world.topks[i]): results['recall'][i] for i in range(len(world.topks))}, epoch)
             w.add_scalars(f'Test/Precision@{world.topks}',
                           {str(world.topks[i]): results['precision'][i] for i in range(len(world.topks))}, epoch)
-            w.add_scalars(f'Test/NDCG@{world.topks}',
-                          {str(world.topks[i]): results['ndcg'][i] for i in range(len(world.topks))}, epoch)
         if multicore == 1:
             pool.close()
         print(results)
