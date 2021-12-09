@@ -1,4 +1,12 @@
 
+# What Should I Read Next?: LightGCN for Poetry Predictions
+
+By Andrea Collins, Isabel Gallegos, Cathy Zhang as part of the Stanford CS224W course project.
+
+This repository accompanies this Medium blog article TODO:LINK and Google Colab TODO:LINK.
+
+---
+
 #### Update
 
 2020-09:
