@@ -3,7 +3,7 @@
 
 By Andrea Collins, Isabel Gallegos, Cathy Zhang as part of the Stanford CS224W course project.
 
-This repository accompanies this Medium blog article TODO:LINK and [Google Colab](https://colab.research.google.com/drive/1tvzRuJdMQqdwnD24DIjqZHZZhE-YfUEK?usp=sharing).
+This repository accompanies this [Medium blog post](https://medium.com/@andreacollins1409/what-should-i-read-next-lightgcn-for-poetry-predictions-8f82a83a82d8) and [Google Colab](https://colab.research.google.com/drive/1tvzRuJdMQqdwnD24DIjqZHZZhE-YfUEK?usp=sharing).
 
 ---
 
